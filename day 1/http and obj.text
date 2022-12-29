@@ -22,7 +22,7 @@ pair.For eg.A cup is a object.It has its color,design,weight etc.In the same way
 characteristics.
 Creation of objects:
 Objects can be created in two ways
-1.By using object literal
+1.By using object literal.
 
 Object={property1:value1,property2:value2,propertyN:valueN}
 
