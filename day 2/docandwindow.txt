@@ -1,0 +1,12 @@
+Document oject:
+Document object represent a webpage that is loaded in the browser.By accessing Document object,we can 
+access the element in the html page.With the help of doument objects,we can add dynamic contents to the 
+web page.
+Syntax : document.property_name;
+
+Window object:
+The window object is the top most object of the DOM hierarchy.It represents a browser window that displays the contents of the 
+webpage.Whenever a window appears on the screen to display the contents of the document, the window object is 
+created
+Syntax:
+window.property_name;

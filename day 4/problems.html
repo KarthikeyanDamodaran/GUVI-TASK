@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //---------------------------------------------
+        //Q1
+        var obj1 = {name:"Person1",age:5};
+        var obj2 = {age:5,name:"Person1"};
+        var key1 = Object.keys(obj1);
+        var key2 = Object.keys(obj2);
+        console.log(key1.length==key2.length && Object.keys(obj1).every(key=>obj1[key]==obj2[key]));
+
+        //---------------------------------------------------
+        //Q2
+        const xhttp = new XMLHttpRequest();
+
+            xhttp.onload = function() {
+                var res=JSON.parse(this.response)
+
+                //2
+                for(var i=0;i<res.length;i++){
+                    console.log(res[i].flag)
+                }
+                //3
+                for(var i=0;i<res.length;i++){
+                    console.log(res[i].name);
+                    console.log(res[i].region);
+                    console.log(res[i].subregion);
+                    console.log(res[i].population);
+                }
+
+            }
+
+
+            xhttp.open("GET", "https://restcountries.com/v3.1/all");
+            xhttp.send();
+
+        
+        
+    </script>
+</body>
+</html>

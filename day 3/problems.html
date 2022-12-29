@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // q 1
+var json = [    
+    {"name":"Ram", "email":"ram@gmail.com", "age":23},    
+    {"name":"Shyam", "email":"shyam23@gmail.com", "age":28},  
+    {"name":"John", "email":"john@gmail.com", "age":33},    
+    {"name":"Bob", "email":"bob32@gmail.com", "age":41}  
+];
+
+console.log("For Construct for printing all jsons");
+for(var i=0;i<json.length;i++){
+    console.log(json[i]);
+}
+
+console.log("For In Construct for printing names");
+
+for(var i in json){
+    console.log(json[i].name);
+}
+
+console.log("For each Construct for printing email");
+json.forEach((v,i)=>console.log(v.email));
+
+
+console.log("For of Construct for printing email");
+for(var v of json){
+    console.log(v.age);
+}
+// -------------------------------------------------------------------------------------
+// q2
+
+{
+  name:"Karthikeyan Damodar",
+  age:24,
+  education:"St Joseph's College of Engineering",
+  languages:"javascript,java",
+  department:"ECE"
+}
+</script>
+</body>
+</html>

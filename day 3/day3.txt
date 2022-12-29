@@ -1,0 +1,13 @@
+Window:
+1. It is the global object.
+2. It holds the browsers context.
+
+
+Screen:
+1. It has properties about user display.
+2. It is the entry point into webpage content. 
+
+Document:
+1. It is where the actual DOM is present.
+2. It holds the dimensions of the screen.
+

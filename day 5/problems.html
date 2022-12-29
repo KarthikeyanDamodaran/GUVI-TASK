@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [1,2,3,4,5,6,7,8,9,10]; // used in multiple subdivisions
+            //1a
+            //IIFE
+            (function(arr) {
+                odds = []
+                for(const num of arr){
+                    if(num%2===1){
+                        odds.push(num);
+                    }
+                }
+                console.log(odds)
+            })(arr);
+            //anonymous
+            var odd = function (arr) {
+                odds = []
+                for(const num of arr){
+                    if(num%2===1){
+                        odds.push(num);
+                    }
+                }
+                console.log(odds)
+                };
+ 
+            odd(arr);
+            var str = "ASSESSMENT DAY 5";
+            //1b
+            //IIFE
+            (function(str){
+                str = str.toLowerCase().split(' ');
+                for (var i = 0; i < str.length; i++) {
+                    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+                }
+                console.log(str.join(' '));
+            })(str);
+            //Anonymous
+            var titleCase = function(title){
+                title = title.toLowerCase().split(' ');
+                for (var i = 0; i < title.length; i++) {
+                    title[i] = title[i].charAt(0).toUpperCase() + title[i].slice(1);
+                }
+                console.log(title.join(' '));
+            };
+            titleCase("ASSESSMENT DAY 5");
+            //1c
+            //IIFE
+            (function(arr){
+                sum=0;
+                for(var num of arr){
+                    sum+=num;
+                }
+                console.log(sum);
+            })(arr);
+            //Anonymous
+            var sumFn = function(arr){
+                var sum = 0;
+                for(var num of arr){
+                    sum+=num;
+                }
+                console.log(sum);
+            };
+            sumFn(arr);
+            //1d
+            function isPrime(num) {
+                if(num < 2) return false;
+
+                for (let k = 2; k < num; k++){
+                    if(num % k == 0){
+                        return false;
+                    }
+                }
+                return true;
+            }
+            //IIFE
+
+            (function(arr){
+                var prime = [];
+                for(var num in arr){
+                    if(isPrime(num)){
+                        prime.push(num);
+                    }
+                }
+                console.log(prime);
+            })(arr);
+            //anonymous
+            var prime = function(arr){
+                var primeres = [];
+                for(var num in arr){
+                    if(isPrime(num)){
+                        primeres.push(num);
+                    }
+                }
+                console.log(primeres);
+            };
+            prime(arr);
+            //1e
+            const strArr = ["racecar","malayalam","pineapple","flower","mom","porcupine"];
+            function checkPalindrome(str) { //function that checks if palindrome or not
+                return str == str.split('').reverse().join('');
+            }
+            //IIFE
+            (function(strArr){
+                var res = [];
+                for(var str of strArr){
+                    if(checkPalindrome(str)){
+                        res.push(str);
+                    }
+                }
+                console.log(res);
+            })(strArr);
+            //anonymous
+            var palindrome = function(strArr){
+                var res = [];
+                for(var str of strArr){
+                    if(checkPalindrome(str)){
+                        res.push(str);
+                    }
+                }
+                console.log(res);
+            };
+            palindrome(strArr);
+            //1f
+            var ar1 = [1, 12, 15, 26, 38];
+            var ar2 = [2, 13, 17, 30, 45];
+            //IIFE
+            (function getMedian(ar1,ar2)
+            {
+                n=ar1.length;//assuming both arrays are sorted and of same size
+                var index1 = 0;
+                var index2 = 0;
+                var count;
+                var m1 = -1, m2 = -1;
+                for (count = 0; count <= n; count++)
+                {
+                    if (index1 == n)
+                    {
+                        m1 = m2;
+                        m2 = ar2[0];
+                        break;
+                    }
+                    else if (index2 == n)
+                    {
+                        m1 = m2;
+                        m2 = ar1[0];
+                        break;
+                    }
+                    if (ar1[index1] <= ar2[index2])
+                    {
+                        m1 = m2;
+                        m2 = ar1[index1];
+                        index1++;
+                    }
+                    else
+                    {
+                        m1 = m2; 
+                        m2 = ar2[index2];
+                        index2++;
+                    }
+                }
+                console.log((m1 + m2)/2);
+            })(ar1,ar2);
+            //anonymous
+            var median = function(ar1,ar2){
+                n=ar1.length;//assuming both arrays are sorted and of same size
+                var index1 = 0;
+                var index2 = 0;
+                var count;
+                var m1 = -1, m2 = -1;
+                for (count = 0; count <= n; count++)
+                {
+                    if (index1 == n)
+                    {
+                        m1 = m2;
+                        m2 = ar2[0];
+                        break;
+                    }
+                    else if (index2 == n)
+                    {
+                        m1 = m2;
+                        m2 = ar1[0];
+                        break;
+                    }
+                    if (ar1[index1] <= ar2[index2])
+                    {
+                        m1 = m2;
+                        m2 = ar1[index1];
+                        index1++;
+                    }
+                    else
+                    {
+                        m1 = m2; 
+                        m2 = ar2[index2];
+                        index2++;
+                    }
+                }
+                console.log((m1 + m2)/2);
+            };
+            median(ar1,ar2);
+            //1g
+            const array = [1,2,2,4,5,7,3,3,6,3,5,8,9,0];
+            //IIFE
+            (function(array){
+                var unique = [];
+                for(i=0; i < array.length; i++){ 
+                    if(unique.indexOf(array[i]) === -1) { 
+                        unique.push(array[i]); 
+                    } 
+                }
+                console.log(unique);
+            })(array);
+            //anonymous
+            var removedup = function(array){
+                var unique = [];
+                for(i=0; i < array.length; i++){ 
+                    if(unique.indexOf(array[i]) === -1) { 
+                        unique.push(array[i]); 
+                    } 
+                }
+                console.log(unique);
+            };
+            removedup(array);
+            //1h
+            //IIFE
+            var a = [1,2,3,4,5];
+            k=2;
+            (function rotation(a, k)
+            {
+            n = a.length;
+            k = k % n;
+            rotate = []
+            for (let i = 0; i < n; i++) {
+                if (i < k) {
+                    rotate.push(a[n + i - k]);
+                }
+                else {
+                    rotate.push((a[i - k]));
+                }
+            }
+            console.log(rotate);
+            })(a,k);
+            //anonymous
+            var rotation = function(a,k){
+                n = a.length;
+                k = k % n;
+                rotate = []
+                for (let i = 0; i < n; i++) {
+                    if (i < k) {
+                        rotate.push(a[n + i - k]);
+                    }
+                    else {
+                        rotate.push((a[i - k]));
+                    }
+                }
+                console.log(rotate);
+            };
+            rotation(a,k);
+            //3a
+            //arrow
+            var oddarrow =  (arr) => {
+                odds = []
+                for(const num of arr){
+                    if(num%2===1){
+                        odds.push(num);
+                    }
+                }
+                console.log(odds)
+                };
+ 
+            oddarrow(arr);
+
+            //3b
+            //arrow
+            var titleCaseArrow = (title)=>{
+                title = title.toLowerCase().split(' ');
+                for (var i = 0; i < title.length; i++) {
+                    title[i] = title[i].charAt(0).toUpperCase() + title[i].slice(1);
+                }
+                console.log(title.join(' '));
+            };
+            titleCaseArrow("ASSESSMENT DAY 5");
+
+            //3c
+            //arrow
+            var sumFnArrow = (arr)=>{
+                var sum = 0;
+                for(var num of arr){
+                    sum+=num;
+                }
+                console.log(sum);
+            };
+            sumFnArrow(arr);
+
+            //3d 
+            //arrow
+            var primeArrow = (arr)=>{
+                var primeres = [];
+                for(var num in arr){
+                    if(isPrime(num)){
+                        primeres.push(num);
+                    }
+                }
+                console.log(primeres);
+            };
+            primeArrow(arr);
+
+            //3e
+            //arrow
+            var palindromeArrow = (strArr)=>{
+                var res = [];
+                for(var str of strArr){
+                    if(checkPalindrome(str)){
+                        res.push(str);
+                    }
+                }
+                console.log(res);
+            };
+            palindromeArrow(strArr); 
+    </script>
+</body>
+</html>

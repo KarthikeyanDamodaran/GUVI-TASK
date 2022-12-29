@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         //3
+         class Person {
+                name;
+                age;
+                gender;
+                constructor(name,age,gender) {
+                    this.name = name;
+                    this.age = age;
+                    this.gender = gender;
+                }
+            }
+            var person = new Person("Karthi",24,"Male");
+            console.log(person);
+
+            //4
+            class Uber{
+                distanceInKm;
+                price;
+                constructor(distanceInKm){
+                    this.distanceInKm=distanceInKm;
+                }
+                getUberPrice(distanceInKm){
+                    return (distanceInKm*7.5);
+                }
+            }
+            var uber = new Uber(11);
+            console.log("Uber price for "+uber.distanceInKm+" at Rs7.5/Km is "+ uber.getUberPrice(uber.distanceInKm));
+    </script>
+</body>
+</html>

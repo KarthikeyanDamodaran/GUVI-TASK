@@ -1,0 +1,49 @@
+1.
+Earlier HTTP/1.1 was a major version of HTTP network protocol used by world wide web
+across clients and servers.It works on textual format and there is persistent connection which means 
+several requests and responses are merged into a single connection.Secondly, there is head of line blocking in which TCP 
+connection is blocked until the response is recieved,i.e all information related to header file
+is repeated in every request.This became a major bottleneck for faster loading applications which lead to the creation
+of HTTP/2 built over Google's SPDY protocol and works on binary format. Here,one TCP connection is used for 
+multiple requests.While HTTP/1.1 compresses data by itself,HTTP/2 uses HPACK which is used to split data 
+from header.It compresses the header which reduces data redundancy.
+Let us take an example to better understand this comparison.If we try to load an image which is split into 100 small images over 
+both HTTP/1.1 and HTTP/2.In HTTP/2,Once the ifrst image starts loading ,all the other images are loaded very quickly
+because HTTP/2 uses PUSH frame that collects all the other images required by client .It avoids the round trip.
+In case of HTTP/1.1 ,Image keeps loading for a longer time one after another to complete the full image.
+Thus,due to its faster loading performance,HTTP/2 is used over HTTP/1.1 and is currently supported by all major browsers.
+---------------------------------------------------------------------------------
+
+
+2.
+Object and it's internal representation in JavaScript:
+A JavaScript object is a collection of named values having properties and behaviour.It can take many values using key:value 
+pair.For eg.A cup is a object.It has its color,design,weight etc.In the same way,Javascript objects have properties which define its 
+characteristics.
+Creation of objects:
+Objects can be created in two ways
+1.By using object literal
+
+Object={property1:value1,property2:value2,propertyN:valueN}
+
+Property and value is separated using colon.
+For eg:
+var Car={Model:c-class,color:white,rating:4.5};
+
+2.By creating object using "new" keyword.
+
+var objectname = new Object();
+
+Accessing JavaScript objects:
+Syntax for accessing property of an object is:
+ObjectName.property
+Or 
+ObjectName["property"]
+For eg : Car.rating
+Object Methods:
+Javascript object Methods are actions that can be performed on objects.For example,to get the headlights of car "on"
+there will be a mechanical functionality.
+For eg:
+function(){
+    return headlights.on
+}

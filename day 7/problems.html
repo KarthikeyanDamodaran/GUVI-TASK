@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const http = new XMLHttpRequest();
+
+xhttp.onload = function() {
+    var res=JSON.parse(this.response)
+    //1a
+    var asiares = res.filter((element) => element.region=='Asia')
+    console.log(asiares);
+
+    //1b
+    var population2lac = res.filter((element)=>element.population<200000)
+    console.log(population2lac)
+
+    //1c
+    res.forEach(element => {
+        console.log(element.name)
+        console.log(element.capital + " " + element.flag)
+    });
+
+    //1d
+    var totalresult=res.reduce((acc,element)=>acc+element.population,0)
+    console.log(totalresult);
+
+    //1e
+    var usdollarcountries = res.filter((element)=> Object.keys(element.currencies || {}).includes('USD'))
+    console.log(usdollarcountries)
+
+}
+
+
+xhttp.open("GET", "https://restcountries.com/v3.1/all");
+xhttp.send();
+
+</script>
+</body>
+</html>
+    </script>
+</body>
+</html>
